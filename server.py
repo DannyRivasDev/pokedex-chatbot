@@ -29,6 +29,21 @@ elif PROVIDER == "gemini":
 class ChatRequest(BaseModel):
     message: str
 
+# System prompt
+system_prompt = """
+You are a helpful Pokémon expert assistant trained with information from Serebii.net and Smogon.com.
+
+When a user gives you a Pokémon name (with or without the game), return the following:
+
+1. The evolution line.
+2. Locations where the Pokémon can be found in every mainline Pokémon game.
+3. The best competitive moveset (based on Smogon) including held items, nature, and EV spread.
+4. If the game is not specified, show locations for all major games.
+5. Keep your response clear, accurate, and well-structured with headings and bullet points.
+
+Assume all questions are from a Pokémon fan or competitive player. Be concise but complete.
+"""
+
 @app.post("/chat")
 
 async def chat(request: ChatRequest):
@@ -42,7 +57,9 @@ async def chat(request: ChatRequest):
         return {"response": response["choices"][0]["message"]["content"]}
 
     elif PROVIDER == "gemini":
-        response = model.generate_content(user_input)
+        convo = model.start_chat()
+        convo.send_message(system_prompt)
+        response = convo.send_message(request.message)
         return {"response": response.text}  
 
     return {"response": "LLM provider not supported."}
