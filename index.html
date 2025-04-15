@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokémon Chatbot</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; max-width: 600px; margin: auto; }
+    textarea, button { width: 100%; margin-top: 1rem; }
+    #response { margin-top: 2rem; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h1>Pokémon Chatbot</h1>
+  <textarea id="question" rows="4" placeholder="Ask me about a Pokémon..."></textarea>
+  <button onclick="askChatbot()">Send</button>
+  <div id="response"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
