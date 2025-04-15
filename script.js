@@ -1,7 +1,7 @@
 async function askChatbot() {
     const question = document.getElementById("question").value;
     const responseDiv = document.getElementById("response");
-    responseDiv.innerText = "Thinking...";
+    responseDiv.innerText = "Computing...";
   
     const res = await fetch("http://127.0.0.1:8000/chat", {
       method: "POST",
