@@ -4,17 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pokémon Chatbot</title>
-  <style>
-    body { font-family: sans-serif; padding: 2rem; max-width: 600px; margin: auto; }
-    textarea, button { width: 100%; margin-top: 1rem; }
-    #response { margin-top: 2rem; white-space: pre-wrap; }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Pokémon Chatbot</h1>
-  <textarea id="question" rows="4" placeholder="Ask me about a Pokémon..."></textarea>
-  <button onclick="askChatbot()">Send</button>
-  <div id="response"></div>
+  <div class="pokedex">
+    <h1>Pokémon Chatbot</h1>
+    <div class="input-container">
+      <input type="text" id="pokemon-input" placeholder="Enter Pokémon name or question" />
+      <button onclick="askPokemon()">Send</button>
+    </div>
+    <div id="pokemon-display" class="hidden">
+        <img id="pokemon-image" src="" alt="Pokemon Image" />
+    </div>
+    <div id="response"></div>
+  </div>
 
   <script src="script.js"></script>
 </body>
