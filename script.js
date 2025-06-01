@@ -2,6 +2,12 @@ function capitalizeFirst(str) {
     return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 }
 
+function handleKey(event) {
+    if (event.key === "Enter") {
+      askPokemon();
+    }
+}
+
 async function askPokemon() {
     const input = document.getElementById("pokemon-input").value.trim();
     const responseBox = document.getElementById("response");
