@@ -1,11 +1,41 @@
+let pokemonList = [];
+
+async function fetchPokemonNames() {
+  const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=1000");
+  const data = await response.json();
+  pokemonList = data.results.map(p => capitalizeFirst(p.name));
+}
+
 function capitalizeFirst(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+}
+
+function showSuggestions() {
+  const input = document.getElementById("pokemon-input").value.toLowerCase();
+  const suggestions = document.getElementById("suggestions");
+  suggestions.innerHTML = "";
+
+  if (!input) return;
+
+  const matches = pokemonList.filter(name => name.toLowerCase().startsWith(input)).slice(0, 10);
+  
+  matches.forEach(name => {
+    const div = document.createElement("div");
+    div.className = "suggestion";
+    div.textContent = name;
+    div.onclick = () => {
+      document.getElementById("pokemon-input").value = name;
+      suggestions.innerHTML = "";
+    };
+    suggestions.appendChild(div);
+  });
 }
 
 function handleKey(event) {
-    if (event.key === "Enter") {
-      askPokemon();
-    }
+  if (event.key === "Enter") {
+    askPokemon();
+    document.getElementById("suggestions").innerHTML = "";
+  }
 }
 
 async function askPokemon() {
@@ -38,3 +68,6 @@ async function askPokemon() {
       imgBox.classList.add("hidden");
     }
 }
+
+// Run this on page load
+window.onload = fetchPokemonNames;

@@ -10,9 +10,10 @@
   <div class="pokedex">
     <h1>Pokédex Chatbot</h1>
     <div class="input-container">
-      <input type="text" id="pokemon-input" placeholder="Enter Pokémon name or question" onkeydown="handleKey(event)" />
+      <input type="text" id="pokemon-input" placeholder="Enter Pokémon name..." oninput="showSuggestions()" autocomplete="off" onkeydown="handleKey(event)" />
       <button onclick="askPokemon()">Send</button>
     </div>
+    <div id="suggestions"></div>
     <div id="pokemon-display" class="hidden">
         <img id="pokemon-image" src="" alt="Pokemon Image" />
     </div>
