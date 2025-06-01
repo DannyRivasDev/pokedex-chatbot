@@ -42,6 +42,11 @@ When a user gives you a Pokémon name (with or without the game), return the fol
 5. Keep your response clear, accurate, and well-structured with headings and bullet points.
 
 Assume all questions are from a Pokémon fan or competitive player. Be concise but complete.
+Format the answer in clear sections using bold headers and line breaks, but do not use markdown symbols (like ###, **, or bullet points). Make the output readable in plain HTML.
+Use plain text with line breaks and simple formatting:
+- Use bold section titles like 'Location:', 'Evolution:', etc.
+- Do not use markdown symbols like **, ##, or bullet points.
+- Use emojis for section headers like 📍, ⚔️, 🧬, 🧠 where appropriate.
 """
 
 @app.post("/chat")

@@ -55,6 +55,7 @@ body {
   white-space: pre-wrap;
   max-height: 300px;
   overflow-y: auto;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 #suggestions {
