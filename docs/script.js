@@ -38,6 +38,8 @@ function handleKey(event) {
   }
 }
 
+const backendURL = "https://huggingface.co/spaces/DannyRivasDev/Pokedex-Chat-Bot"; 
+
 async function askPokemon() {
     const input = document.getElementById("pokemon-input").value.trim();
     const game = document.getElementById("game-select").value;
@@ -51,7 +53,7 @@ async function askPokemon() {
     const name = input.split(" ")[0].toLowerCase(); // First word is assumed to be the Pokémon
   
     try {
-      const res = await fetch("http://127.0.0.1:8000/chat", {
+      const res = await fetch(backendURL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ 
@@ -75,3 +77,4 @@ async function askPokemon() {
 
 // Run this on page load
 window.onload = fetchPokemonNames;
+
