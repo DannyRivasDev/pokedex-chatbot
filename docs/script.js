@@ -38,7 +38,7 @@ function handleKey(event) {
   }
 }
 
-const backendURL = "https://huggingface.co/spaces/DannyRivasDev/Pokedex-Chat-Bot"; 
+const backendURL = "https://dannyrivasdev-pokedex-chat-bot.hf.space/chat"; 
 
 async function askPokemon() {
     const input = document.getElementById("pokemon-input").value.trim();
