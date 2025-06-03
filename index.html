@@ -10,7 +10,48 @@
   <div class="pokedex">
     <h1>Pokédex Chatbot</h1>
     <div class="input-container">
-      <input type="text" id="pokemon-input" placeholder="Enter Pokémon name..." oninput="showSuggestions()" autocomplete="off" onkeydown="handleKey(event)" />
+      <input type="text" id="pokemon-input" placeholder="Enter Pokémon name and game..." oninput="showSuggestions()" autocomplete="off" onkeydown="handleKey(event)" />
+      <select id="game-select">
+        <option value="">All Games</option>
+        <option value="Red">Red</option>
+        <option value="Blue">Blue</option>
+        <option value="Yellow">Yellow</option>
+        <option value="Gold">Gold</option>
+        <option value="Silver">Silver</option>
+        <option value="Crystal">Crystal</option>
+        <option value="Ruby">Ruby</option>
+        <option value="Sapphire">Sapphire</option>
+        <option value="Emerald">Emerald</option>
+        <option value="Collesium">Collesium</option>
+        <option value="Gale of Darkness">Gale of Darkness</option>
+        <option value="FireRed">FireRed</option>
+        <option value="LeafGreen">LeafGreen</option>
+        <option value="Diamond">Diamond</option>
+        <option value="Pearl">Pearl</option>
+        <option value="Platinum">Platinum</option>
+        <option value="HeartGold">HeartGold</option>
+        <option value="SoulSilver">SoulSilver</option>
+        <option value="Black">Black</option>
+        <option value="White">White</option>
+        <option value="Black 2">Black 2</option>
+        <option value="White 2">White 2</option>
+        <option value="X">X</option>
+        <option value="Y">Y</option>
+        <option value="Omega Ruby">Omega Ruby</option>
+        <option value="Alpha Sapphire">Alpha Sapphire</option>
+        <option value="Sun">Sun</option>
+        <option value="Moon">Moon</option>
+        <option value="Ultra Sun">Ultra Sun</option>
+        <option value="Ultra Moon">Ultra Moon</option>
+        <option value="Sword">Sword</option>
+        <option value="Shield">Shield</option>
+        <option value="Brilliant Diamond">Brilliant Diamond</option>
+        <option value="Shining Pearl">Shining Pearl</option>
+        <option value="Legends: Arceus">Legends: Arceus</option>
+        <option value="Scarlet">Scarlet</option>
+        <option value="Violet">Violet</option>
+      </select>
+
       <button onclick="askPokemon()">Send</button>
     </div>
     <div id="suggestions"></div>

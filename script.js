@@ -40,6 +40,7 @@ function handleKey(event) {
 
 async function askPokemon() {
     const input = document.getElementById("pokemon-input").value.trim();
+    const game = document.getElementById("game-select").value;
     const responseBox = document.getElementById("response");
     const imgBox = document.getElementById("pokemon-display");
     const img = document.getElementById("pokemon-image");
@@ -53,7 +54,10 @@ async function askPokemon() {
       const res = await fetch("http://127.0.0.1:8000/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: input }),
+        body: JSON.stringify({ 
+          message: input,
+          game: game 
+        }),
       });
       const data = await res.json();
   
