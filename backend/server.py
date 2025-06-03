@@ -11,7 +11,7 @@ PROVIDER = os.getenv("PROVIDER")
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # You can replace "*" with specific domains in production
+    allow_origins=["*"],  # Replace "*" with specific domains in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -29,26 +29,6 @@ elif PROVIDER == "gemini":
 class ChatRequest(BaseModel):
     message: str
     game: str = ""
-
-# System prompt
-# system_prompt = f"""
-# You are a helpful Pokémon expert assistant trained with information from Serebii.net and Smogon.com.
-
-# {'The user is asking specifically about the game ' + game + '.' if game else 'If the game is not specified, provide results across all generations.'} with the following:
-
-# 1. Locations where the Pokémon can be found in every mainline Pokémon game, including encounter rate percentage, and time of day if applicalbe.
-# 2. The evolution line.
-# 3. The best competitive moveset (based on Smogon) including held items, nature, and EV spread.
-# 4. If the game is not specified, show locations for all major games.
-# 5. Keep your response clear, accurate, and well-structured with headings and bullet points.
-
-# Assume all questions are from a Pokémon fan or competitive player. Be concise but complete.
-# Format the answer in clear sections using bold headers and line breaks, but do not use markdown symbols (like ###, **, or bullet points). Make the output readable in plain HTML.
-# Use plain text with line breaks and simple formatting:
-# - Use bold section titles like 'Location:', 'Evolution:', etc.
-# - Do not use markdown symbols like **, ##, or bullet points.
-# - Use emojis for section headers like 📍, ⚔️, 🧬, 🧠 where appropriate.
-# """
 
 @app.post("/chat")
 
