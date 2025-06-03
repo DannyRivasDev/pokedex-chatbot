@@ -6,7 +6,7 @@ A web-based Pokédex assistant that uses an LLM backend to answer questions abou
 
 ## 🌐 Live Demo
 
-👉 **Try it here:** [https://dannyrivasdev.github.io/pokemon-chatbot](https://dannyrivasdev.github.io/pokemon-chatbot)
+👉 **Try it here:** [https://dannyrivasdev.github.io/pokedex-chatbot](https://dannyrivasdev.github.io/pokedex-chatbot)
 
 > Type a Pokémon name and optionally select a game from the dropdown to get a tailored response using information from **Serebii.net** and **Smogon.com**.
 
