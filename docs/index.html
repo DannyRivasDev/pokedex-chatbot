@@ -4,13 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pokédex Chatbot</title>
+  <!-- Link to the stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Main container styled as a Pokédex -->
   <div class="pokedex">
     <h1>Pokédex Chatbot</h1>
+    
+    <!-- Input container with search box, game selector, and send button -->
     <div class="input-container">
-      <input type="text" id="pokemon-input" placeholder="Enter a Pokémon name..." oninput="showSuggestions()" autocomplete="off" onkeydown="handleKey(event)" />
+      <!-- Pokémon name input with autocomplete -->
+      <input 
+        type="text" 
+        id="pokemon-input" 
+        placeholder="Enter a Pokémon name..." 
+        oninput="showSuggestions()" 
+        autocomplete="off" 
+        onkeydown="handleKey(event)" 
+      />
+      
+      <!-- Game version selector dropdown -->
       <select id="game-select">
         <option value="">All Games</option>
         <option value="Red">Red</option>
@@ -52,15 +66,23 @@
         <option value="Violet">Violet</option>
       </select>
 
+      <!-- Send button to submit the query -->
       <button onclick="askPokemon()">Send</button>
     </div>
+    
+    <!-- Container for autocomplete suggestions -->
     <div id="suggestions"></div>
+    
+    <!-- Container for Pokémon image (hidden by default) -->
     <div id="pokemon-display" class="hidden">
         <img id="pokemon-image" src="" alt="Pokemon Image" />
     </div>
+    
+    <!-- Container for the LLM response -->
     <div id="response"></div>
   </div>
 
+  <!-- Link to the JavaScript file -->
   <script src="script.js"></script>
 </body>
 </html>

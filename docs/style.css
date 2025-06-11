@@ -1,3 +1,9 @@
+/* 
+ * Pokédex Chatbot Stylesheet
+ * Provides styling for the Pokédex-themed chat interface
+ */
+
+/* Base body styling */
 body {
   background-color: #f2f2f2;
   font-family: 'Arial', sans-serif;
@@ -6,8 +12,9 @@ body {
   padding-top: 40px;
 }
 
+/* Main Pokédex container styling */
 .pokedex {
-  background: linear-gradient(#cc0000, #ff4444);
+  background: linear-gradient(#cc0000, #ff4444);  /* Red gradient like a Pokédex */
   padding: 2rem;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -16,6 +23,7 @@ body {
   color: white;
 }
 
+/* Input container with search box, dropdown, and button */
 .input-container {
   display: flex;
   justify-content: center;
@@ -24,6 +32,7 @@ body {
   margin-bottom: 1rem;
 }
 
+/* Styling for the input field */
 .input-container input {
   flex: 1;
   padding: 0.5rem;
@@ -31,6 +40,7 @@ body {
   border: none;
 }
 
+/* Styling for the send button */
 .input-container button {
   padding: 0.5rem 1rem;
   border-radius: 10px;
@@ -40,11 +50,13 @@ body {
   cursor: pointer;
 }
 
+/* Pokémon image display */
 #pokemon-display img {
   max-width: 100px;
   margin-top: 10px;
 }
 
+/* Response container styling */
 #response {
   background-color: #fff;
   color: #000;
@@ -52,37 +64,41 @@ body {
   border-radius: 10px;
   margin-top: 1rem;
   text-align: left;
-  white-space: pre-wrap;
+  white-space: pre-wrap;  /* Preserves line breaks in the response */
   max-height: 300px;
-  overflow-y: auto;
+  overflow-y: auto;  /* Scrollable for long responses */
   font-family: 'Segoe UI', sans-serif;
 }
 
+/* Autocomplete suggestions container */
 #suggestions {
   position: relative;
   background-color: white;
   color: black;
   border-radius: 10px;
   max-height: 150px;
-  overflow-y: auto;
+  overflow-y: auto;  /* Scrollable for many suggestions */
   width: calc(100% - 2rem);
   margin-top: 0.25rem;
-  z-index: 1000;
+  z-index: 1000;  /* Ensure it appears above other elements */
   left: 50%;
   transform: translateX(-50%);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
+/* Individual suggestion styling */
 .suggestion {
   padding: 0.5rem;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
 
+/* Hover effect for suggestions */
 .suggestion:hover {
   background-color: #eee;
 }
 
+/* Utility class to hide elements */
 .hidden {
   display: none;
 }
