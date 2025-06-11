@@ -11,7 +11,7 @@ PROVIDER = os.getenv("PROVIDER")
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Replace "*" with specific domains in production
+    allow_origins=["https://dannyrivasdev.github.io/"],  # frontend domain
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
