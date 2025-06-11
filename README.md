@@ -22,14 +22,16 @@ A web-based Pokédex assistant that uses an LLM backend to answer questions abou
   - Dropdown to select Pokémon games
   - Embedded Pokémon artwork
   - Clean HTML formatting (no Markdown required)
+  - Responsive design for mobile and desktop
 
 ### Backend
-- **FastAPI**
+- **FastAPI** with **Pydantic** for data validation
 - Deployed to **Hugging Face Spaces** using the **Docker** runtime
 - LLM Provider options:
   - `OpenAI` (`gpt-3.5-turbo`)
   - `Gemini` (`gemini-2.0-flash`)
 - Environment variables are stored securely using Hugging Face **Secrets**
+- CORS configured for secure cross-origin requests
 
 ---
 
@@ -55,23 +57,33 @@ A web-based Pokédex assistant that uses an LLM backend to answer questions abou
 ### Backend (FastAPI)
 
 ```bash
+# Clone the repository
+git clone https://github.com/dannyrivasdev/pokedex-chatbot.git
+cd pokedex-chatbot
+
 # Install dependencies
 pip install -r requirements.txt
 
+# Set up environment variables
+cp backend/.env.example backend/.env
+# Edit the .env file with your API keys
+
 # Run the FastAPI server
-uvicorn app:app --reload
+cd backend
+uvicorn server:app --reload
 ```
 
 ### Environment Variables
 
-Create a `.env` file in the root directory:
+The project uses a `.env` file in the backend directory with the following structure:
 
 ```
-PROVIDER=openai
-OPENAI_API_KEY=your_openai_key
-# OR
+# Choose the LLM provider: "openai" or "gemini"
 PROVIDER=gemini
-GEMINI_API_KEY=your_gemini_key
+
+# Your API keys
+GEMINI_API_KEY="your_gemini_api_key_here"
+OPENAI_API_KEY="your_openai_api_key_here"
 ```
 
 ### Frontend
@@ -101,13 +113,31 @@ The LLM is prompted to return:
 
 ---
 
+## 🔧 Project Structure
+
+```
+pokedex-chatbot/
+├── backend/
+│   ├── .env              # API keys (not committed)
+│   ├── .env.example      # Example environment variables
+│   └── server.py         # FastAPI server implementation
+├── docs/                 # Frontend (GitHub Pages)
+│   ├── index.html
+│   ├── script.js
+│   └── style.css
+├── requirements.txt      # Python dependencies
+└── README.md
+```
+
+---
+
 ## 🧠 Credits
 
-- [Serebii.net](https://serebii.net)
-- [Smogon](https://www.smogon.com)
-- [PokéAPI](https://pokeapi.co/)
-- [Hugging Face](https://huggingface.co/)
-- [OpenAI](https://openai.com/) / [Gemini](https://ai.google.dev/)
+- [Serebii.net](https://serebii.net) - Comprehensive Pokémon data
+- [Smogon](https://www.smogon.com) - Competitive Pokémon strategies
+- [PokéAPI](https://pokeapi.co/) - Pokémon data API
+- [Hugging Face](https://huggingface.co/) - Backend hosting
+- [OpenAI](https://openai.com/) / [Gemini](https://ai.google.dev/) - LLM providers
 
 ---
 
